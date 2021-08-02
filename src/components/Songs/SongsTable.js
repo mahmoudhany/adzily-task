@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Grid } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { selectSong } from '../../redux/actions/song'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 export default function SongsTable({ album, songsList }) {
-  const [selected, setSelected] = React.useState([]);
   const classes = useStyles();
   const dispatch = useDispatch()
 
@@ -97,7 +96,6 @@ export default function SongsTable({ album, songsList }) {
                   songsList
                     .filter((song) => (song.albumID === album.id))
                     .map((song, index) => {
-                      // const isItemSelected = isSelected(song.id);
                       const labelId = `enhanced-table-checkbox-${index}`;
                       return (
                         <TableRow
@@ -112,7 +110,6 @@ export default function SongsTable({ album, songsList }) {
                           <TableCell padding="checkbox">
                             <Checkbox
                               checked={song.isSelected}
-                              // onChange={() => handleClick(song.id)}
                               inputProps={{ 'aria-labelledby': labelId }}
                             />
                           </TableCell>

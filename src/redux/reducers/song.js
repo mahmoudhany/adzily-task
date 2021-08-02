@@ -10,10 +10,8 @@ function songReducer(state = initialState, action) {
       return state.map((song) => (
         song.id === action.payload ? ({ ...song, isSelected: !song.isSelected }) : song
       ));
-      break;
     case actions.RESET_SONGS:
       return songs;
-      break;
     default:
       break;
   }

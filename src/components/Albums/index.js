@@ -18,10 +18,9 @@ const useStyles = makeStyles((theme) => ({
   details: {
   },
   content: {
-    // flex: '1 0 auto',
+
   },
   cover: {
-    // width: 151,
     height: 151,
     objectFit: 'cover'
   }

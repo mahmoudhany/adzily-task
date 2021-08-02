@@ -78,15 +78,15 @@ export default function Form({
           padding: 20,
           borderRadius: 10
         }}>
-          <ui style={{ listStyle: 'none' }}>
+          <ul style={{ listStyle: 'none' }}>
             {
               Object.keys(data).map(key => (
-                <li style={style.li}><b style={style.b}>{key}:</b> {data[key]}</li>
+                <li key={key} style={style.li}><b style={style.b}>{key}:</b> {data[key]}</li>
               ))
             }
             <li style={style.li}><b style={style.b}>count:</b> {count}</li>
             <li style={style.li}><b style={style.b}>amount:</b> {amount}$</li>
-          </ui>
+          </ul>
         </div>
       </Modal>
       <form className={classes.root}
@@ -99,7 +99,7 @@ export default function Form({
           name="name"
           label="Name"
           placeholder='John Doe'
-          InputProps
+
           onChange={onChange}
           error={showError && data.name === ''}
         />

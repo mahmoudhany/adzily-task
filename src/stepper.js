@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -29,10 +29,6 @@ const useStyles = makeStyles((theme) => ({
   album: {
     display: 'flex',
   },
-  total: {
-    // display: 'flex',
-    // justifyContent: 'center'
-  },
   instructions: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(1),
@@ -48,21 +44,6 @@ function getSteps() {
   return ['Select singers', 'Select Albums', 'Select Songs', 'Submit'];
 }
 
-function getStepContent(stepIndex, count, amount) {
-
-  switch (stepIndex) {
-    case 0:
-      return <Singers />
-    case 1:
-      return <Albums />;
-    case 2:
-      return <Songs />;
-    case 3:
-      return <Form count={count} amount={amount} />;
-    default:
-      return 'Unknown stepIndex';
-  }
-}
 function getSelectionLength(stepIndex, selectedState) {
 
   switch (stepIndex) {
@@ -137,7 +118,7 @@ export default function HorizontalLabelPositionBelowStepper() {
                     />
                   )}
                 </Grid>
-                <Grid item xs={12} sm={3} className={classes.total}>
+                <Grid item xs={12} sm={3} >
                   <Total
                     currentStep={activeStep}
                     singers={selectedState.singers}

@@ -12,10 +12,8 @@ function albumReducer(state = initialState, action) {
           ({ ...album, isSelected: !album.isSelected })
           : album
       ))
-      break;
     case actions.RESET_ALBUMBS:
       return albums;
-      break;
     default:
       return state;
   }

@@ -10,7 +10,6 @@ export default function Songs() {
 
   const {
     albums,
-    // singers,
     songs
   } = useSelector(state => ({
     albums: state.albums.filter(({ isSelected }) => isSelected),
